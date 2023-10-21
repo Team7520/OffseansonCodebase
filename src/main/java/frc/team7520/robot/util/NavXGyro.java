@@ -18,7 +18,7 @@ public class NavXGyro extends AHRS{
     /** Creates a new NavXGyro. */
     private NavXGyro() {
         super(SPI.Port.kMXP);
-
+        reset();
         zeroHeading = getNavHeading() + ((DriverStation.getAlliance() == DriverStation.Alliance.Red) ? 90 : -90);
         zeroAngle = getNavAngle();
         System.out.println("Setup ZeroAngle " + zeroAngle);

@@ -154,6 +154,9 @@ public class SwerveBase extends SubsystemBase {
     public Rotation2d getYaw() {
         return (Constants.Swerve.invertGyro) ? Rotation2d.fromDegrees(360).minus(gyro.getRotation2d()) : gyro.getRotation2d();
     }
+    public double getPitch() {
+        return gyro.getRoll();
+    }
 
     public void synchronizeModuleEncoders() {
         for(RevSwerveModule mod : swerveMods) {
